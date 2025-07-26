@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>FEEDBACK</title>
+<link rel="stylesheet" href="feedbackform.css">
+</head>
+<SCRIPT LANGUAGE="JavaScript">
+function valid()
+{
+if(document.form1.name.value=="")
+{
+alert("please enter a value for name");
+document.form1.username.focus();
+return false;
+}
+email_id=document.form1.email;
+if(email_id.value=="")
+{
+alert("PLEASE ENTER EMAIL ID!");
+email_id.focus();
+return false;
+}
+atpos=email_id.value.indexOf("@");
+dotpos=email_id.value.lastIndexOf(".");
+if(atpos<1||(dotpos-atpos<2))
+{
+alert("INVALID EMAIL ID..PLEASE ENTER YOUR EMAIL AGAIN");
+email_id.focus();
+return false;
+}
+alert("THANKS FOR YOUR FEEDBACK!!!");
+return true;
+}
+</SCRIPT>
+</head>
+<body> 
+
+<div class="container"></div>
+
+    <form name="form1">
+        <h1>YOUR FEEDBACK</h1>
+        <div class="id">
+            <input type="text" name="name" placeholder="Full name">
+        </div>
+        <div class="id">
+          <input type="text" name="email" placeholder="Email address">
+        </div>
+        
+        <textarea cols="15" rows="5" placeholder="Enter your opinions here...">
+        </textarea>
+        <input id="f1" type="submit" value="SUBMIT" onClick="return valid();">
+    </form>
+    <div class="button">
+        <a href="../Valorant-Landing-page/Valorant-landingpage.html" class="btn"><b>BACK</b></a>
+        </div>
+        
+
+</div>
+</body>
+</html>
